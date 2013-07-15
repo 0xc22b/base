@@ -244,7 +244,7 @@ public class BaseServlet extends HttpServlet {
             Class[] argClasses = {HttpServletResponse.class, String.class};
             Object[] argObjects = {resp, content};
 
-            if (req.getRequestURL().equals(USER_URI)) {
+            if (req.getRequestURI().equals(USER_URI)) {
                 // Check logging in from sessionID in request parameter.
                 String sessionKeyString = req.getParameter(BaseConstants.SSID);
                 String sessionID = req.getParameter(BaseConstants.SID);
