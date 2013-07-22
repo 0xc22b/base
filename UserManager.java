@@ -669,7 +669,9 @@ public class UserManager {
 
     public static boolean deleteLoginSession(String sessionKeyString, String sessionID) {
         Session session = getSession(sessionKeyString, Session.LOG_IN, sessionID);
-        deleteSession(session.getKey());
+        if (session != null) {
+            deleteSession(session.getKey());
+        }
         return true;
     }
 
