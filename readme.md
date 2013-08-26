@@ -26,9 +26,7 @@ Git submodules
 Already included in source code
 * bcrypt.java
 
-### Override default values
-
-Subclass com.wit.base.BaseServlet
+### Subclass com.wit.base.BaseServlet to override default values
 
 Required values
 * Web URL - getWebUrl()
