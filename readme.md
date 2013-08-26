@@ -2,8 +2,7 @@
 
 Web base components for submodule
 
-# Features
-
+## Features
   * Home page
   * Sign up
   * Sign in/Sign out
@@ -13,66 +12,57 @@ Web base components for submodule
   * Confirm email
   * Reset password
 
-# Platform
-
+## Platform
   * Java appengine
 
-# Dependencies
+## Dependencies
 
-## External libraries
+   External libraries
+     * Closure templates: soy.jar
 
-   * Closure templates: soy.jar
+   Git submodules
+     * JSON library: org.json
 
-## Git submodules
+   Already included in source code
+     * bcrypt.java
 
-   * JSON library: org.json
+## Subclass com.wit.base.BaseServlet to override default values
 
-## Already included in source code
+   Required values
+     * Web URL - getWebUrl()
+     * Web name - getWebName()
+     * From email - getFromEmail()
+     * From name - getFromName()
+     * Delete all user contents - deleteAllUserContents(User user)
+     * Reset password email subject - getResetPasswordEmailSubject()
+     * Reset password email message body - getResetPasswordEmailMsgBody()
+     * Confirm email subject - getConfirmEmailSubject()
+     * Confirm email message body - getConfirmEmailMsgBody()
 
-   * bcrypt.java
+   Paths to .soy files
+     * Base page
+     * Home page
+     * Work page (Logged-in page)
+     * About page
+     * Terms page
+     * Feedback page
+     * Confirm email page
+     * Reset password page
+     * User page
 
-# Subclass com.wit.base.BaseServlet to override default values
+   Paths to css renaming map files (Optional)
+     * Home page
+     * Work page (Logged-in page)
+     * User page   
 
-## Required values
-
-   * Web URL - getWebUrl()
-   * Web name - getWebName()
-   * From email - getFromEmail()
-   * From name - getFromName()
-   * Delete all user contents - deleteAllUserContents(User user)
-   * Reset password email subject - getResetPasswordEmailSubject()
-   * Reset password email message body - getResetPasswordEmailMsgBody()
-   * Confirm email subject - getConfirmEmailSubject()
-   * Confirm email message body - getConfirmEmailMsgBody()
-
-## Paths to .soy files
-
-   * Base page
-   * Home page
-   * Work page (Logged-in page)
-   * About page
-   * Terms page
-   * Feedback page
-   * Confirm email page
-   * Reset password page
-   * User page
-
-## Paths to css renaming map files (Optional)
-
-   * Home page
-   * Work page (Logged-in page)
-   * User page   
-
-# appengine-web.xml
-
+## appengine-web.xml
   ```xml
   <inbound-services>
     <service>mail</service>
   </inbound-services>
   ```
 
-# web.xml
-
+## web.xml
   ```xml
   <servlet>
     <servlet-name>Base</servlet-name>
@@ -114,18 +104,18 @@ Web base components for submodule
   </servlet-mapping>
   ```
 
-# Data format
+## Data format
 
-## POST request
-   * Not logged in: method="methodName"&content="JSON Object"
-   * Logged in: ssid="Session key string"&sid="session id"&method="methodName"&content="JSON Object"
+  POST request
+    * Not logged in: method="methodName"&content="JSON Object"
+    * Logged in: ssid="Session key string"&sid="session id"&method="methodName"&content="JSON Object"
 
-## POST response
-   * JSON array of log object
+  POST response
+    * JSON array of log object
 
-# Unit tests and examples
+## Unit tests and examples
   * [TBA]
 
-# License
+## License
 
 The software stands under Apache 2 License and comes with NO WARRANTY
