@@ -14,12 +14,24 @@ public class Log {
         public boolean isValid;
         public String value;
         public String msg;
+        public String subType;
+        public String subValue;
 
         public LogInfo(String type, boolean isValid, String value, String msg) {
             this.type = type;
             this.isValid = isValid;
             this.value = value;
             this.msg = msg;
+        }
+        
+        public LogInfo(String type, boolean isValid, String value, String msg, String subType,
+                String subValue) {
+            this.type = type;
+            this.isValid = isValid;
+            this.value = value;
+            this.msg = msg;
+            this.subType = subType;
+            this.subValue = subValue;
         }
 
         public JSONObject getJSONObject() throws JSONException {
@@ -28,6 +40,8 @@ public class Log {
             jsonObject.put(BaseConstants.IS_VALID, isValid);
             jsonObject.put(BaseConstants.VALUE, value);
             jsonObject.put(BaseConstants.MSG, msg);
+            jsonObject.put(BaseConstants.SUB_TYPE, subType);
+            jsonObject.put(BaseConstants.SUB_VALUE, subValue);
             return jsonObject;
         }
     }
@@ -41,6 +55,11 @@ public class Log {
     public void addLogInfo(String type, boolean isValid, String value,
             String msg) {
         logInfoList.add(new LogInfo(type, isValid, value, msg));
+    }
+    
+    public void addLogInfo(String type, boolean isValid, String value, String msg, String subType,
+            String subValue) {
+        logInfoList.add(new LogInfo(type, isValid, value, msg, subType, subValue));
     }
 
     public boolean isValid() {

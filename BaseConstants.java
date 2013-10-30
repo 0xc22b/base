@@ -8,6 +8,9 @@ public class BaseConstants {
     public static final String IS_VALID = "isValid";
     public static final String VALUE = "value";
     public static final String MSG = "msg";
+    public static final String SUB_TYPE = "subType";
+    public static final String SUB_VALUE = "subValue";
+    
     public static final String ERR_MSG = "errMsg";
 
     public static final String KEY_NAME = "keyName";
